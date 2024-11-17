@@ -36,6 +36,7 @@
                     android:layout_width="60dp"
                     android:layout_height="wrap_content"
                     android:minHeight="48dp"
+
                     android:contentDescription="@string/cari_mahasiswa"
 
                     android:src="@drawable/baseline_person_search_24"/>
@@ -58,35 +59,23 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
-        android:layout_above="@+id/llButton"
         android:layout_below="@+id/cvCariNIM">
-        <LinearLayout
-            android:id="@+id/llData"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvStudents"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical" />
+            tools:listitem="@layout/item_list_student" />
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
-    <LinearLayout
-        android:id="@+id/llButton"
-        android:layout_width="match_parent"
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btnTambah"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="16dp"
+        android:layout_alignParentEnd="true"
         android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp">
-        <Button
-            android:id="@+id/btnTambah"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/tambah"
-            android:layout_marginEnd="5dp"
-            android:layout_weight="0.5"/>
-        <Button
-            android:id="@+id/btnUpdate"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/update"
-            android:layout_weight="0.5"/>
-    </LinearLayout>
+        android:layout_marginBottom="16dp"
+        android:contentDescription="@string/tambah"
+        app:fabSize="normal"
+        android:src="@drawable/baseline_add_24"/>
 </RelativeLayout>
